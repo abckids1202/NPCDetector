@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e1117" />
+    <meta name="description" content="The NPC Detector turns ordinary answers into extraordinary character lore." />
+    <title>The NPC Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="The NPC Detector home">
+        <span class="brand-mark">✦</span>
+        <span>NPC<span class="muted">/</span>DETECTOR</span>
+      </a>
+      <div class="header-status"><span class="status-dot"></span> FIELD STUDY 07</div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell" id="intro">
+        <div class="hero-copy">
+          <p class="eyebrow">A MUNDANE BEHAVIOR FIELD STUDY</p>
+          <h1>You are not the<br /><em>main character.</em></h1>
+          <p class="hero-lede">You are much more specific than that.</p>
+          <p class="hero-description">Answer ordinary questions. Reveal the highly particular NPC role you have been playing all along.</p>
+          <button class="primary-button" id="begin-button">Begin the investigation <span>↗</span></button>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="card-top"><span>CLASSIFIED DOSSIER</span><span>NO. 0042</span></div>
+          <div class="radar"><div class="radar-ring ring-one"></div><div class="radar-ring ring-two"></div><div class="radar-line"></div><span class="radar-dot dot-a"></span><span class="radar-dot dot-b"></span><span class="radar-dot dot-c"></span><span class="radar-label">ordinary<br />behavior</span></div>
+          <div class="card-bottom"><strong>THE EVIDENCE<br />IS EVERYWHERE.</strong><span>◌</span></div>
+        </div>
+      </section>
+
+      <section class="quiz section-shell hidden" id="quiz-section">
+        <div class="quiz-heading"><div><p class="eyebrow">LIVE INTERROGATION</p><h2 id="question-number">Question 01 <span>/ 10</span></h2></div><div class="progress-readout" id="progress-readout">10% COMPLETE</div></div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="question-panel">
+          <p class="question-kicker" id="question-kicker">PUBLIC BEHAVIOR</p>
+          <h3 id="question-text"></h3>
+          <div class="answers" id="answers"></div>
+          <p class="observation" id="observation"></p>
+        </div>
+      </section>
+
+      <section class="result section-shell hidden" id="result-section">
+        <div class="result-hero">
+          <div><p class="eyebrow">CLASSIFICATION COMPLETE</p><p class="result-stamp">THE EVIDENCE HAS SPOKEN</p></div>
+          <div class="result-actions"><button class="text-button" id="copy-button">Copy dossier</button><button class="text-button" id="restart-button">Run it again ↗</button></div>
+        </div>
+        <div class="identity-grid">
+          <div class="identity-main"><p class="identity-label">YOU ARE</p><h2 id="result-name"></h2><p class="identity-line" id="result-tagline"></p></div>
+          <div class="classification-card"><div><span>ROLE</span><strong id="result-role"></strong></div><div><span>ALIGNMENT</span><strong id="result-alignment"></strong></div><div><span>THREAT LEVEL</span><strong id="result-threat"></strong></div></div>
+        </div>
+        <div class="dossier-grid">
+          <article class="dossier-card wide"><div class="card-heading"><span>01 / FIELD NOTES</span><span>✦</span></div><h3>Behavioral summary</h3><p id="result-summary"></p></article>
+          <article class="dossier-card visual-card"><div class="avatar-orbit"><div class="orbit"></div><div class="avatar-symbol" id="avatar-symbol">◒</div></div><p class="tiny-label">NPC TYPE</p><h3 id="result-type"></h3><p id="result-visual"></p></article>
+          <article class="dossier-card"><div class="card-heading"><span>02 / REPEATING SIGNAL</span><span>↻</span></div><h3>Dialogue loops</h3><ul id="result-dialogue" class="quote-list"></ul></article>
+          <article class="dossier-card quest-card"><div class="card-heading"><span>03 / QUEST LOG</span><span>↗</span></div><h3 id="result-quest-title"></h3><p id="result-quest"></p><div class="side-quest"><span>SIDE QUEST</span><p id="result-sidequest"></p></div></article>
+          <article class="dossier-card"><div class="card-heading"><span>04 / LOADOUT</span><span>□</span></div><h3>Inventory</h3><ul id="result-inventory" class="inventory-list"></ul></article>
+          <article class="dossier-card"><div class="card-heading"><span>05 / PASSIVE TRAITS</span><span>+</span></div><h3>Abilities</h3><ul id="result-abilities" class="ability-list"></ul></article>
+          <article class="dossier-card wide lore-card"><div><div class="card-heading"><span>06 / RECOVERED LORE</span><span>◌</span></div><h3>There is more to this.</h3><p id="result-lore"></p></div><div class="lore-seal">UNVERIFIED<br />BUT PLAUSIBLE</div></article>
+          <article class="dossier-card"><div class="card-heading"><span>07 / LOCAL RUMORS</span><span>•••</span></div><h3>What the town says</h3><ul id="result-rumors" class="rumor-list"></ul></article>
+          <article class="dossier-card"><div class="card-heading"><span>08 / STATISTICS</span><span>▥</span></div><h3>Observed stats</h3><div id="result-stats" class="stats-list"></div></article>
+          <article class="dossier-card wide ending-card"><div><div class="card-heading"><span>09 / SECRET ENDING</span><span>∞</span></div><h3>If you embrace the role</h3><p id="result-ending"></p></div><div class="ending-mark">NPC<br /><span>∞</span></div></article>
+        </div>
+        <div class="result-footer"><p>Every mundane habit is evidence of a larger story.</p><button class="primary-button" id="copy-button-bottom">Copy my NPC dossier <span>↗</span></button></div>
+      </section>
+    </main>
+    <footer class="site-footer section-shell"><span>THE NPC DETECTOR / v1.0</span><span>NO PERSONAL DATA STORED</span></footer>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
